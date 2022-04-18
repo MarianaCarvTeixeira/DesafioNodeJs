@@ -4,8 +4,8 @@ const employesController = new EmployesController();
 const router = Router();
 
 router.post("/", employesController.store);
-router.get("/", employesController.store);
-router.put("/", employesController.store);
-router.delete("/", employesController.store);
+router.get("/", employesController.getEmployes);
+router.put("/", employesController.updateEmployes);
+router.delete("/", employesController.deleteEmployes);
 
 module.exports = router;
