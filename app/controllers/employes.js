@@ -1,4 +1,4 @@
-const Employes = require("./app/models/employes");
+const Employes = require("../models/employes");
 class EmployesController{
 
 async store(req, res) {
