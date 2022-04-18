@@ -4,12 +4,12 @@ const mongoose = require("mongoose");
 const app = express();
 
 app.use(
-    express.urlencoded({
-      extended: true,
-    })
-  );
-  
-  app.use(express.json());
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("api running");
