@@ -17,7 +17,6 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Admin:Admin@mariacluster.mturj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
   )
   .then(() => console.log("Connect"), app.listen(3000))
   .catch((err) => console.log("erro"));
