@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/MarianaCarvTeixeira/DesafioNodeJs.git"
   },
-  "author": "",
+  "author": "Mariana Carvalho Silva Teixeira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MarianaCarvTeixeira/DesafioNodeJs/issues"
@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "mongoose": "^6.3.1",
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
   }
