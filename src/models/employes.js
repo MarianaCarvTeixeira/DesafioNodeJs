@@ -18,7 +18,10 @@ const DataSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  situation: String,
+  situation: {
+    type: String,
+    enum: ["activate", "deactivate"],
+  },
 });
 
 const employes = mongoose.model("Employes", DataSchema);
