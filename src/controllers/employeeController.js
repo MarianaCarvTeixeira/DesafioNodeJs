@@ -39,4 +39,26 @@ module.exports = {
         res.status(400).json(console.log(error));
       }
   },
+  async update(req, res) {
+    const { name, office, situation } = req.body;
+
+    try {
+        await Employes.updateOne();
+  
+        res.status(201).json({Employes});
+      } catch (error) {
+        res.status(400).json(console.log(error));
+      }
+  },
+  async delete(req, res) {
+    const { name, office, situation } = req.body;
+
+    try {
+        await Employes.deleteOne();
+  
+        res.status(201).json({Employes});
+      } catch (error) {
+        res.status(400).json(console.log(error));
+      }
+  },
 };
