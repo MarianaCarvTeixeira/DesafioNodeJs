@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "758acd64-78b2-41a9-ad87-7893d65f85b7",
+		"name": "MariaCompany",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro de funcionários",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"pedro augusto silva\",   \r\n    \"cpf\": \"12312312312\",   \r\n    \"office\": \"caixa\",\r\n    \"birthday\": \"25/10/1999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/employee",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}",
+					"host": [
+						"{{URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar funcionários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/v1/employee?name=marcia&office=gerente",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "marcia"
+						},
+						{
+							"key": "office",
+							"value": "gerente"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar funcionário",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n\"name\": \"maria da roberta\",    \r\n\"office\": \"funcionario\",\r\n\"situation\": \"deactivate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/employee/6266dd7d051c71797e0b76f0",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"6266dd7d051c71797e0b76f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir funcionário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/v1/employee/6266dd7d051c71797e0b76f0",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"6266dd7d051c71797e0b76f0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
