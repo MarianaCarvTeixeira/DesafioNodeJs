@@ -9,7 +9,7 @@ module.exports = {
       name,
       cpf,
       office,
-      birthday :  moment(birthday, "DD/MM/YYYY").format("YYYY-MM-DD HH:MM:SS"),
+      birthday :  moment(birthday, "DD/MM/YYYY").format("YYYY-MM-DD"),
       situation: "activate"
     };
 
@@ -23,6 +23,18 @@ module.exports = {
           birthday: employee.birthday,
           situation: employee.situation,
         });
+      } catch (error) {
+        res.status(400).json(console.log(error));
+      }
+  },
+
+  async index(req, res) {
+    const { name, office } = req.params;
+
+    try {
+        const employes = await Employes.find({where: {name} && {office}});
+  
+        res.status(201).json({employes});
       } catch (error) {
         res.status(400).json(console.log(error));
       }
