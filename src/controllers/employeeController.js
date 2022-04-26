@@ -30,7 +30,7 @@ module.exports = {
   },
 
   async index(req, res) {
-    const { name, office } = req.params;
+    const { name, office } = req.params;  
 
     try {
       const employes = await Employes.find( where= { name } && { office } );

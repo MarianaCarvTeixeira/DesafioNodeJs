@@ -10,7 +10,7 @@ const DataSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Double,
+    type: Number,
     required: true,
   },
   employee_id: {
