@@ -1,5 +1,6 @@
 const Employes = require("../models/employes");
 const moment = require("moment");
+const { findOne } = require("../models/employes");
 
 module.exports = {
   async store(req, res) {
@@ -32,7 +33,7 @@ module.exports = {
     const { name, office } = req.params;
 
     try {
-      const employes = await Employes.find({ where: { name } && { office } });
+      const employes = await Employes.find( where= { name } && { office } );
 
       res.status(201).json({ employes });
     } catch (error) {
@@ -43,24 +44,30 @@ module.exports = {
     const { name, office, situation } = req.body;
 
     const employee = {
+      name,
+      office,
       situation,
     };
 
     try {
       await Employes.updateOne();
 
-      res.status(201).json({ Employes });
+      res.status(201).json({
+        name,
+        cpf:Employes.cpf,
+        office,
+        birthday: Employes.birthday,
+        situation: employee.situation,
+      });
     } catch (error) {
       res.status(400).json(console.log(error));
     }
   },
   async delete(req, res) {
-    const { name, office, situation } = req.body;
-
     try {
       await Employes.deleteOne();
 
-      res.status(201).json({ Employes });
+      res.status(204).json();
     } catch (error) {
       res.status(400).json(console.log(error));
     }
