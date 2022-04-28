@@ -24,6 +24,6 @@ const DataSchema = new mongoose.Schema({
   },
 });
 
-const employes = mongoose.model("Employes", DataSchema);
+const Employes = mongoose.model("Employes", DataSchema);
 
-module.exports = employes;
+module.exports = Employes;

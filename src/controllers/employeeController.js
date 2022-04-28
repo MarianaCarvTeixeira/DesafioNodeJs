@@ -32,7 +32,7 @@ module.exports = {
     const { name, office } = req.body;
 
     try {
-      const employes = await Employes.find({name: new RegExp('^'+name+'$')}&&{office: new RegExp('^'+office+'$')});
+      const employes = await Employes.find({name}&&{office});
 
       res.status(201).json({ employes });
     } catch (error) {
@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   async update(req, res) {
-    const { _id, name, office, situation } = req.body;
+    const { name, office, situation } = req.body;
 
     const employee = {
       name,
@@ -49,7 +49,7 @@ module.exports = {
     };
 
     try {
-      await Employes.updateOne( {_id}, employee);
+      await Employes.findByIdAndUpdate( req.params._id);
 
       res.status(201).json({
         name: employee.name,
