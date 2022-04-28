@@ -1,11 +1,12 @@
 const Products = require("../models/products");
+const Employes = require("../models/employes");
 
 module.exports = {
   async store(req, res) {
     const { employes_id, price, name, category } = req.body;
 
     const products = {
-      employes_id,
+      employee_id: employes_id,
       name,
       category,
       price,
@@ -15,7 +16,7 @@ module.exports = {
       await Products.create(products);
 
       res.status(201).json({
-        employes_id:products.employes_id,
+        employes_id:products.employee_id,
         name:products.name,
         category:products.category,
         price:products.price,

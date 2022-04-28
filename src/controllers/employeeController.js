@@ -1,6 +1,5 @@
 const Employes = require("../models/employes");
 const moment = require("moment");
-const { findOne } = require("../models/employes");
 
 module.exports = {
   async store(req, res) {
@@ -30,10 +29,10 @@ module.exports = {
   },
 
   async index(req, res) {
-    const { name, office } = req.params;  
+    const { name, office } = req.body;
 
     try {
-      const employes = await Employes.find( where= { name } && { office } );
+      const employes = await Employes.find({name: new RegExp('^'+name+'$')}&&{office: new RegExp('^'+office+'$')});
 
       res.status(201).json({ employes });
     } catch (error) {
@@ -41,7 +40,7 @@ module.exports = {
     }
   },
   async update(req, res) {
-    const { name, office, situation } = req.body;
+    const { _id, name, office, situation } = req.body;
 
     const employee = {
       name,
@@ -50,12 +49,12 @@ module.exports = {
     };
 
     try {
-      await Employes.updateOne();
+      await Employes.updateOne({ _id });
 
       res.status(201).json({
-        name,
-        cpf:Employes.cpf,
-        office,
+        name: employee.name,
+        cpf: Employes.cpf,
+        office: employee.office,
         birthday: Employes.birthday,
         situation: employee.situation,
       });
@@ -64,8 +63,10 @@ module.exports = {
     }
   },
   async delete(req, res) {
+    const _id = req.params;
+
     try {
-      await Employes.deleteOne();
+      await Employes.deleteOne(_id);
 
       res.status(204).json();
     } catch (error) {
