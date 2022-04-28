@@ -5,12 +5,21 @@ module.exports = {
   async store(req, res) {
     const { employes_id, price, name, category } = req.body;
 
+
     const products = {
-      employee_id: employes_id,
+      employes_id,
       name,
       category,
       price,
     };
+
+    employes_id = await find(Employes._id)
+
+    if(employes_id.office !== gerente){
+      res.status(400).json();
+    } else {
+      employes_id
+    }
 
     try {
       await Products.create(products);

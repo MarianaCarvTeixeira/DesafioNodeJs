@@ -49,7 +49,7 @@ module.exports = {
     };
 
     try {
-      await Employes.updateOne({ _id });
+      await Employes.updateOne( {_id}, employee);
 
       res.status(201).json({
         name: employee.name,
