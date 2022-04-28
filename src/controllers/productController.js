@@ -3,29 +3,20 @@ const Employes = require("../models/employes");
 
 module.exports = {
   async store(req, res) {
-    const { employes_id, price, name, category } = req.body;
-
+    const { employee_id, price, name, category } = req.body;
 
     const products = {
-      employes_id,
+      employee_id: employee_id,
       name,
       category,
       price,
     };
 
-    employes_id = await find(Employes._id)
-
-    if(employes_id.office !== gerente){
-      res.status(400).json();
-    } else {
-      employes_id
-    }
-
     try {
       await Products.create(products);
 
       res.status(201).json({
-        employes_id:products.employee_id,
+        employes_id:products.employes_id,
         name:products.name,
         category:products.category,
         price:products.price,
