@@ -51,7 +51,7 @@ module.exports = {
     };
 
     try {
-      await Employes.updateOne( employee, {new:true});
+      await Employes.updateOne( findEmployee, employee, {new:true});
 
       res.status(201).json({
         name: employee.name,
