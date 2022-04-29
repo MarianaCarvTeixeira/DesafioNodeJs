@@ -1,5 +1,6 @@
 const Employes = require("../models/employes");
 const moment = require("moment");
+const { findById } = require("../models/employes");
 
 module.exports = {
   async store(req, res) {
@@ -29,10 +30,9 @@ module.exports = {
   },
 
   async index(req, res) {
-    const { name, office } = req.body;
 
     try {
-      const employes = await Employes.find({name}&&{office});
+      const employes = await Employes.find(req.params.name && req.params.office);
 
       res.status(201).json({ employes });
     } catch (error) {
@@ -42,6 +42,8 @@ module.exports = {
   async update(req, res) {
     const { name, office, situation } = req.body;
 
+    const findEmployee = await Employes.findById( req.params._id,)
+
     const employee = {
       name,
       office,
@@ -49,13 +51,13 @@ module.exports = {
     };
 
     try {
-      await Employes.findByIdAndUpdate( req.params._id);
+      await Employes.updateOne( employee, {new:true});
 
       res.status(201).json({
         name: employee.name,
-        cpf: Employes.cpf,
+        cpf: findEmployee.cpf,
         office: employee.office,
-        birthday: Employes.birthday,
+        birthday: findEmployee.birthday,
         situation: employee.situation,
       });
     } catch (error) {

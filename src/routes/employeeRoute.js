@@ -5,7 +5,7 @@ const router = Router();
 
 router.post("/", EmployesController.store);
 router.get("/", EmployesController.index);
-router.put("/:Employes_id",EmployesController.update);
+router.put("/:_id",EmployesController.update);
 router.delete("/:Employes_id", EmployesController.delete);
 
 module.exports = router;
