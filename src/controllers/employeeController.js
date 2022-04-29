@@ -38,7 +38,6 @@ module.exports = {
 
     try {
       const employes = await Employes.find({$and: [ {'name': { $regex: '^' + employee.name, $options: 'i' }}, { 'office': { $regex: '^' + employee.office, $options: 'i' }}]});
-      console.log(employes)
 
       res.status(201).json({ employes });
     } catch (error) {
