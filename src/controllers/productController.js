@@ -18,6 +18,10 @@ module.exports = {
       res.status(400).json({message: 'Cadastro de produtos deve ser realizado pelo gerente.'});
     }
 
+    if(findEmployee.situation !== "activate"){
+      res.status(400).json({message: 'Gerente deve estar ativo para realizar cadastrar produto.'});
+    }
+
     try {
       await Products.create(products);
 
