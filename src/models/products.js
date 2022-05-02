@@ -1,13 +1,6 @@
 const mongoose = require("mongoose");
 
-const MUUID = require("uuid-mongodb");
-
 const DataSchema = new mongoose.Schema({
-  _id: {
-    type: "object",
-    value: { type: "Buffer" },
-    default: () => MUUID.v1(),
-  },
   name: {
     type: String,
     required: true,

@@ -67,13 +67,15 @@ module.exports = {
       situation,
     };
 
+    const formatedCpf = findEmployee.cpf.toString().replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+
     try {
       await Employes.updateOne( findEmployee, employee, {new:true});
 
       res.status(201).json({
         id: findEmployee._id,
         name: employee.name,
-        cpf: findEmployee.cpf,
+        cpf: formatedCpf,
         office: employee.office,
         birthday: findEmployee.birthday,
         situation: employee.situation,
