@@ -19,3 +19,4 @@ Criação de API Rest para a empresa ficticia Maria Company, tendo como objetivo
 * NodeJS
 * Mogoose/MongoDb
 * Moment - para tratar datas
+* Regex
