@@ -19,7 +19,7 @@ module.exports = {
     }
 
     if(findEmployee.situation !== "activate"){
-      res.status(400).json({message: 'Gerente deve estar ativo para realizar cadastrar produto.'});
+      res.status(400).json({message: 'Gerente deve estar ativo para cadastrar produto.'});
     }
 
     try {
