@@ -2,7 +2,7 @@
 
 Desafio proposto pela CompassUOL para testar conhecimentos adquiridos durante o fastrack.
 
-### 📋 Pré-requisitos
+## 📋 Pré-requisitos
 
 Ao abrir o projeto no vscode rodar "npm install" no terminal para instalar as dependências e para rodar o projeto usar comando "npm start".
 
