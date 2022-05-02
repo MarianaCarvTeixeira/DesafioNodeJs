@@ -33,7 +33,7 @@ module.exports = {
 
       });
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
 
@@ -50,7 +50,7 @@ module.exports = {
 
       res.status(201).json({ products });
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
 };

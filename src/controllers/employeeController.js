@@ -36,7 +36,7 @@ module.exports = {
         situation: employee.situation,
       });
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
 
@@ -53,7 +53,7 @@ module.exports = {
 
       res.status(201).json({ employes });
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
   async update(req, res) {
@@ -81,7 +81,7 @@ module.exports = {
         situation: employee.situation,
       });
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
   async delete(req, res) {
@@ -92,7 +92,7 @@ module.exports = {
 
       res.status(204).json();
     } catch (error) {
-      res.status(400).json(console.log(error));
+      res.status(400).json();
     }
   },
 };
