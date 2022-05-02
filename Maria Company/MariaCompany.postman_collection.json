@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{    \r\n    \"name\": \"pedro augusto silva\",   \r\n    \"cpf\": \"12312312312\",   \r\n    \"office\": \"caixa\",\r\n    \"birthday\": \"25/10/1999\"\r\n}",
+					"raw": "{    \r\n    \"name\": \"bruna souza santos\",   \r\n    \"cpf\": \"15512078312\",   \r\n    \"office\": \"caixa\",\r\n    \"birthday\": \"02/05/1999\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -49,11 +49,23 @@
 		},
 		{
 			"name": "Listar funcionários",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"br\",\r\n    \"office\": \"ca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{URL}}/api/v1/employee?name=marcia&office=gerente",
+					"raw": "{{URL}}/api/v1/employee",
 					"host": [
 						"{{URL}}"
 					],
@@ -65,11 +77,13 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "marcia"
+							"value": "silva",
+							"disabled": true
 						},
 						{
 							"key": "office",
-							"value": "gerente"
+							"value": "caixa",
+							"disabled": true
 						}
 					]
 				}
@@ -83,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{    \r\n\"name\": \"maria da roberta\",    \r\n\"office\": \"funcionario\",\r\n\"situation\": \"deactivate\"\r\n}",
+					"raw": "{    \r\n\"name\": \"bruna santos\",    \r\n\"office\": \"gerente\",\r\n\"situation\": \"deactivate\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,7 +105,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{URL}}/api/v1/employee/6266dd7d051c71797e0b76f0",
+					"raw": "{{URL}}/api/v1/employee/6270093746c32ebe0af008be",
 					"host": [
 						"{{URL}}"
 					],
@@ -99,7 +113,7 @@
 						"api",
 						"v1",
 						"employee",
-						"6266dd7d051c71797e0b76f0"
+						"6270093746c32ebe0af008be"
 					]
 				}
 			},
@@ -111,7 +125,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/v1/employee/6266dd7d051c71797e0b76f0",
+					"raw": "{{URL}}/api/v1/employee/62683718c4a031cd3b46f4bb",
 					"host": [
 						"{{URL}}"
 					],
@@ -119,7 +133,67 @@
 						"api",
 						"v1",
 						"employee",
-						"6266dd7d051c71797e0b76f0"
+						"62683718c4a031cd3b46f4bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de produtos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"employes_id\": \"6270093746c32ebe0af008be\",   \r\n\"name\": \"camiseta mário\",    \r\n\"price\": \"52.50\",\r\n\"category\": \"vestuário\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/product",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar produtos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee_id\": \"62683742c4a031cd3b46f4d3\",\r\n    \"category\": \"eletrônicos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/product/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						""
 					]
 				}
 			},
