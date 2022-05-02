@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "62701cebffebba4136760d36"
+  },
+  "name": "iphone 52",
+  "category": "eletrônicos",
+  "price": 12863.5,
+  "employee_id": "62701c55ffebba4136760d21",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701cfeffebba4136760d39"
+  },
+  "name": "playstation 5",
+  "category": "eletrônicos",
+  "price": 8863.5,
+  "employee_id": "62701c55ffebba4136760d21",
+  "__v": 0
+}]

@@ -1,0 +1,129 @@
+[{
+  "_id": {
+    "$oid": "6270093746c32ebe0af008be"
+  },
+  "name": "bruna santos",
+  "cpf": {
+    "$numberLong": "15512078312"
+  },
+  "office": "gerente",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "deactivate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701c55ffebba4136760d21"
+  },
+  "name": "mariana carvalho silva teixeira",
+  "cpf": {
+    "$numberLong": "15518676312"
+  },
+  "office": "gerente",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701c70ffebba4136760d24"
+  },
+  "name": "luis carvalho souzaa",
+  "cpf": {
+    "$numberLong": "15518677612"
+  },
+  "office": "caixa",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701c7fffebba4136760d27"
+  },
+  "name": "luis carvalho souzaa",
+  "cpf": {
+    "$numberLong": "15768677612"
+  },
+  "office": "vendedor",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701c91ffebba4136760d2a"
+  },
+  "name": "teste cardoso souza",
+  "cpf": {
+    "$numberLong": "15768677612"
+  },
+  "office": "vendedor",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701c97ffebba4136760d2d"
+  },
+  "name": "teste cardoso souza",
+  "cpf": {
+    "$numberLong": "15768679812"
+  },
+  "office": "vendedor",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701ca5ffebba4136760d30"
+  },
+  "name": "fulano de tal",
+  "cpf": {
+    "$numberLong": "15768699812"
+  },
+  "office": "vendedor",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62701cb3ffebba4136760d33"
+  },
+  "name": "amelia castro",
+  "cpf": {
+    "$numberLong": "15798699812"
+  },
+  "office": "vendedor",
+  "birthday": {
+    "$date": {
+      "$numberLong": "925603200000"
+    }
+  },
+  "situation": "activate",
+  "__v": 0
+}]
