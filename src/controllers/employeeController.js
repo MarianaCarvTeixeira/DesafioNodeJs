@@ -13,12 +13,24 @@ module.exports = {
       situation: "activate",
     };
 
+    const singleCpf = await Employes.findOne({ cpf: { $eq: employee.cpf } })
+    if(singleCpf){
+      res.status(404).json({message: 'CPF já está cadastrado.'});
+    }
+
+    const formatedCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+
+    const Birthday = moment(birthday).isSameOrBefore(moment());
+    if (!Birthday){
+      res.status(404).json({message: 'Data de nascimento inválida.'});
+    }
+
     try {
       await Employes.create(employee);
 
       res.status(201).json({
         name: employee.name,
-        cpf: employee.cpf,
+        cpf: formatedCpf,
         office: employee.office,
         birthday: employee.birthday,
         situation: employee.situation,
