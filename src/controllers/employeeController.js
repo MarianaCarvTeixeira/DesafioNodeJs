@@ -20,7 +20,7 @@ module.exports = {
 
     const formatedCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
 
-    const Birthday = moment(birthday).isSameOrBefore(moment());
+    const Birthday = moment(employee.birthday).isSameOrBefore(moment().subtract(15, 'year'));
     if (!Birthday){
       res.status(404).json({message: 'Data de nascimento inválida.'});
     }
