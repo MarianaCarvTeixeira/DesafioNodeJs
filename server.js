@@ -1,5 +1,4 @@
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
@@ -14,7 +13,6 @@ mongoose.connect("mongodb://localhost:27017/MariaCompany", function (err) {
 });
 
 app.use(cors());
-app.use(cookieParser());
 app.use(express.json());
 app.use(routes);
 
